@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:h="http://java.sun.com/jsf/html" >
+    
+    <h:head>
+        <title>Template JSF </title>
+    </h:head>
+    
+    <h:body>
+        <ui:composition>
+            
+            <div style="border-width: 2px;border-color: green;border-style: solid ; text-align: center">
+                <h1>#{templateParam}</h1>
+            </div>
+            <div style="border-width: 2px;border-color: green;border-style: solid ; text-align: center">
+                <ui:insert name="header">
+                    <ui:include src="/template/header.xhtml" />
+                </ui:insert>                
+            </div>
+            <div  style="border-width: 2px;border-color: yellow;border-style: solid ; text-align: center">
+                <ui:insert name="content">
+             <ui:include src="/template/content.xhtml" />  
+             </ui:insert>
+            </div>
+            <div style="border-width: 2px;border-color: blue;border-style: solid ; text-align: center">
+                <ui:insert name="footer">
+              <ui:include src="/template/footer.xhtml" />
+              </ui:insert>
+            </div>            
+        </ui:composition>
+    </h:body>
+</html>

@@ -6,25 +6,40 @@
       xmlns:f="http://java.sun.com/jsf/core" 
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html" >
+    
     <h:head>
-        <title>Page 2</title>        
+        <title>Ma page 2</title>        
     </h:head>
+    
     <h:body>
+
+        <ui:composition template="template/common.xhtml">
+            
+            <ui:param name="templateParam" value="Gros Titre en parametre" />
+            
+            <ui:define name="header">
+                <ui:param name="headerContent" value="Tout va bien !" />
+            </ui:define>
+
+            <ui:define name="content">
+                <p>Vous êtes content ?</p>
+            </ui:define>
+
+            <ui:define name="footer">
+                <h:form style="margin: auto">
+                    <h:commandButton action="home?faces-redirect=true" value="Retour"/>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+       
         
-        
-        
-        <h3>Vous êtes sur la page 2 </h3>
-        <p>Vous êtes content ?</p>
-        
-        <h:form>
-            <h:commandButton action="home" value="Retour"/>
-        </h:form>
-        
-        
-        <h:form>
-            <h:commandLink action="#{navigationController.goToPage}" value="Retour">                
-            </h:commandLink>
-        </h:form>
-        
+
+
+
+
+
+
     </h:body>
 </html>
