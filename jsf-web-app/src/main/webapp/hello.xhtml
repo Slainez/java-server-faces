@@ -2,14 +2,31 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html" >
     <h:head>
         <title>First Facelet</title>        
     </h:head>
     <h:body>
-        <h1 style="text-align: center ">Premiere page JSF</h1>
+        <h1 style="text-align: center ">u/YAYYAYVIDEOGAMES</h1>
         <div >
-            <p style="text-align: center ">#{helloWorld.message}</p>
+            <c:forEach begin="1" end="20" var="i">
+                <c:if test="${i %2 == 0}">
+                    <p style="text-align: center ">#{helloWorld.message}</p>
+                </c:if>
+                <c:if test="${i %3 == 0}">
+                    <p style="text-align: left;font-style: italic ">#{helloWorld.message}</p>
+                </c:if>
+                <c:if test="${i %5 == 0}">
+                    <p style="text-align: right;font-variant: small-caps ">#{helloWorld.message}</p>
+                </c:if>
+             
+            </c:forEach>
         </div>
+        
+        <h:form>
+            <h:commandButton action="home" value="Retour"/>
+        </h:form>
     </h:body>
 </html>

@@ -9,7 +9,7 @@ public class Message {
     private String message ;
     
     public Message(){
-        this.message = "UBISOFT GOES STEAMWORK BYE BYE , ALWAYS ON DRM ";
+        this.message = "ubisoft goes steamwork byebye always on DRM ";
                
     }
 
