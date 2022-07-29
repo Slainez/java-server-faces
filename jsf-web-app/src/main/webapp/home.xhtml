@@ -3,13 +3,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core"      
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html" >
     <h:head>
-        <title>First Facelet</title>        
+        <title>Home</title>        
     </h:head>
     <h:body>
-        <h1 style="text-align: center ">Navigation Implicite</h1>
+        <section>
+            <h1 style="text-align: center ">Navigation Implicite</h1>
         <hr />
         <h3>Aller vers la page hello (via ManagedBean)</h3>
         <h:form>
@@ -20,6 +22,30 @@
         <h:form>
             <h:commandButton action="page2" value="Aller sur la page 2"/>
         </h:form>
+            
+        </section>
+        
+         <section>
+            <h1 style="text-align: center ">Navigation conditionelle</h1>
+        <hr />
+        
+        <h:form>
+            <h:commandLink action="#{navigationController.goToPage}" value="Aller sur la page Hello">
+                <f:param name="pageId" value="hello" />
+            </h:commandLink>
+        </h:form>
+        <br/>
+        <h:form>
+            <h:commandLink action="#{navigationController.goToPage}" value="Aller sur la page 2">
+                <f:param name="pageId" value="page2" />
+            </h:commandLink>
+        </h:form>
+        
+        
+        
+            
+        </section>
+        
         
     </h:body>
 </html>
