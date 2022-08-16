@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      
+    <h:head>
+        <title>Inscription</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <fieldset>
+                <h3>Inscription</h3>
+                    Nom :
+                    <h:inputText value="#{adherentData.nom}" />
+                    <br />
+
+                    Prenom:
+                    <h:inputText value="#{adherentData.prenom}" />
+                     <br />
+
+                    Date de naissance :
+                    <h:inputText value="#{adherentData.dateNaissance}" />
+                     <br />
+
+                    Villes :
+                     <h:selectOneMenu value="#{adherentData.ville}" >
+                       <f:selectItem itemValue = "bourges"  />
+                       <f:selectItem itemValue = "tours" />
+                       <f:selectItem itemValue = "rennes"  />                            
+                     </h:selectOneMenu>
+                     <br /> 
+
+                     Loisirs :
+                      <h:selectOneMenu value="#{adherentData.loisir}" >
+                         <f:selectItem itemValue = "lecture"  />
+                         <f:selectItem itemValue = "developpement"  />
+                         <f:selectItem itemValue = "sieste"  />
+                         <f:selectItem itemValue = "television"  />                             
+                       </h:selectOneMenu>
+                      <br />
+
+                     Sexe :
+                     <h:selectOneRadio value="#{adherentData.sexe}" >
+                         <f:selectItem itemValue = "homme" itemLabel = "Homme" />
+                         <f:selectItem itemValue = "femme" itemLabel = "Femme" />            
+                     </h:selectOneRadio>
+                     <br /> 
+
+                     <h:commandButton value="Valider" action="#{adherentData.addAdherents()}" />
+                
+            </fieldset>
+            
+            
+        </h:form>
+    </h:body>
+</html>

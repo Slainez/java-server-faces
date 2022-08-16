@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Adhérents</title>
+    </h:head>
+    <h:body>
+        <h1>Liste des adhérents</h1>
+
+        <h:form>
+            <h:dataTable value="#{adherentData.adherents}" var="adherent">
+
+                <h:column>
+                    <f:facet name="header">Nom</f:facet>
+                        #{adherent.nom}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Prenom</f:facet>
+                        #{adherent.prenom}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Date de Naissance</f:facet>
+                        #{adherent.dateNaissance}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">ville</f:facet>
+                        #{adherent.ville}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Loisir</f:facet>
+                        #{adherent.loisir}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Sexe</f:facet>
+                        #{adherent.sexe}
+                </h:column>
+
+            </h:dataTable>
+
+            <table>
+                <tr>                    
+                    <td><h:commandButton value="Inscription" action="inscription?faces-redirect=true}" /></td>
+                </tr>
+            </table>
+            
+        </h:form>
+
+    </h:body>
+</html>
