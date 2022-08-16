@@ -6,84 +6,42 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-
-@ManagedBean(name="adherentData" , eager = true)
 @SessionScoped
+@ManagedBean(name = "adherentData", eager = true)
 public class AdherentData {
+
+    private List<Adherent> adherents;
+    private Adherent adherent;
     
-    private List<Adherent> adherents = new ArrayList();
-    private String nom ;
-    private String prenom ;
-    private String dateNaissance ;
-    private String ville ;
-    private String loisir ;
-    private String sexe ;
+    public AdherentData() {
+        this.adherents = new ArrayList();
+        this.adherent = new Adherent();
+    }
+
+    public String goToValidate() {
+        return "validate?faces-redirect=true";
+    }
+
+    public String onSave() {
+        adherents.add(adherent);
+        adherent = new Adherent();
+        return "listAdherent";
+    }
 
     public List<Adherent> getAdherents() {
         return adherents;
     }
 
-    public String addAdherents() {
-        Adherent adherent = new Adherent(nom, prenom,dateNaissance,ville,loisir,sexe);
-        adherents.add(adherent);
-        
-        nom="";
-        prenom="";
-        dateNaissance="";
-        ville="";
-        loisir="";
-        sexe="";
-        
-        return "showAdherents" ;
+    public void setAdherents(List<Adherent> adherents) {
+        this.adherents = adherents;
     }
 
-    public String getNom() {
-        return nom;
+    public Adherent getAdherent() {
+        return adherent;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setAdherent(Adherent adherent) {
+        this.adherent = adherent;
     }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public String getDateNaissance() {
-        return dateNaissance;
-    }
-
-    public void setDateNaissance(String dateNaissance) {
-        this.dateNaissance = dateNaissance;
-    }
-
-    public String getVille() {
-        return ville;
-    }
-
-    public void setVille(String ville) {
-        this.ville = ville;
-    }
-
-    public String getLoisir() {
-        return loisir;
-    }
-
-    public void setLoisir(String loisir) {
-        this.loisir = loisir;
-    }
-
-    public String getSexe() {
-        return sexe;
-    }
-
-    public void setSexe(String sexe) {
-        this.sexe = sexe;
-    }
-    
     
 }

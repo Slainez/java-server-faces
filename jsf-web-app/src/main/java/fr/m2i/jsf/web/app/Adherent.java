@@ -1,74 +1,89 @@
-
 package fr.m2i.jsf.web.app;
 
 public class Adherent {
     
-    private String nom ;
-    private String prenom ;
-    private String dateNaissance ;
-    private String ville ;
-    private String loisir ;
-    private String sexe ;
+    private int id;
+    private String lastname;
+    private String firstname;
+    private String birthdate;
+    private String city;
+    private String hobby;
+    private String gender;
 
     public Adherent() {
+        
     }
 
-    public Adherent(String nom, String prenom, String dateNaissance, String ville, String loisir, String sexe) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.dateNaissance = dateNaissance;
-        this.ville = ville;
-        this.loisir = loisir;
-        this.sexe = sexe;
+    public Adherent(int id, String lastname, String firstname, String birthdate, String city, String hobby, String gender) {
+        this.id = id;
+        this.lastname = lastname;
+        this.firstname = firstname;
+        this.birthdate = birthdate;
+        this.city = city;
+        this.hobby = hobby;
+        this.gender = gender;
     }
 
-    public String getNom() {
-        return nom;
+    public int getId() {
+        return id;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getDateNaissance() {
-        return dateNaissance;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setDateNaissance(String dateNaissance) {
-        this.dateNaissance = dateNaissance;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getVille() {
-        return ville;
+    public String getBirthdate() {
+        return birthdate;
     }
 
-    public void setVille(String ville) {
-        this.ville = ville;
+    public void setBirthdate(String birthdate) {
+        this.birthdate = birthdate;
     }
 
-    public String getLoisir() {
-        return loisir;
+    public String getCity() {
+        return city;
     }
 
-    public void setLoisir(String loisir) {
-        this.loisir = loisir;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public String getSexe() {
-        return sexe;
+    public String getHobby() {
+        return hobby;
     }
 
-    public void setSexe(String sexe) {
-        this.sexe = sexe;
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
     }
-    
-    
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
 }
+    
+
+   
+    
+    
+

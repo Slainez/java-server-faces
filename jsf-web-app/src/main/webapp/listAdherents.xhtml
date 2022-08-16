@@ -14,37 +14,37 @@
 
                 <h:column>
                     <f:facet name="header">Nom</f:facet>
-                        #{adherent.nom}
+                       <h:outputText value="#{adherent.lastname}" />
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">Prenom</f:facet>
-                        #{adherent.prenom}
+                       <h:outputText value="#{adherent.firstname}" />
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">Date de Naissance</f:facet>
-                        #{adherent.dateNaissance}
+                        <h:outputText value="#{adherent.birthdate}" />
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">ville</f:facet>
-                        #{adherent.ville}
+                        <h:outputText value="#{adherent.city}" /> 
                 </h:column>
                 <h:column>
                     <f:facet name="header">Loisir</f:facet>
-                        #{adherent.loisir}
+                        <h:outputText value="#{adherent.hobby}" />
                 </h:column>
                 <h:column>
                     <f:facet name="header">Sexe</f:facet>
-                        #{adherent.sexe}
+                       <h:outputText value="#{adherent.gender}" />
                 </h:column>
 
             </h:dataTable>
 
             <table>
                 <tr>                    
-                    <td><h:commandButton value="Inscription" action="inscription?faces-redirect=true}" /></td>
+                    <td><h:commandButton value="Inscription" action="signup?faces-redirect=true}" /></td>
                 </tr>
             </table>
             

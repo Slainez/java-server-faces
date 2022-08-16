@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      
+    <h:head>
+        <title>Inscription au club</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <fieldset>
+                <legend>Inscription</legend>
+                <h:panelGrid columns='2' >
+                    <h:outputLabel value="Nom" />
+                    <h:inputText value="#{adherentData.adherent.lastname}" />
+                    
+                    
+                    <h:outputLabel value="Prénom" />
+                    <h:inputText value="#{adherentData.adherent.firstname}" />
+                    
+                    <h:outputLabel value="Date de naissance" />
+                    <h:inputText value="#{adherentData.adherent.birthdate}" />
+                    
+                    <h:outputLabel value="Villes" />
+                    <h:selectOneMenu value="#{adherentData.adherent.city}" >
+                       <f:selectItem itemValue = "Bourges"  />
+                       <f:selectItem itemValue = "Tours" />
+                       <f:selectItem itemValue = "Rennes"  />                            
+                     </h:selectOneMenu>
+                    
+                    <h:outputLabel value="Loisirs" />
+                     <h:selectOneMenu value="#{adherentData.adherent.hobby}" >
+                         <f:selectItem itemValue = "lecture"  />
+                         <f:selectItem itemValue = "developpement"  />
+                         <f:selectItem itemValue = "sieste"  />
+                         <f:selectItem itemValue = "television"  />                             
+                       </h:selectOneMenu>
+                    
+                    <h:outputLabel value="Sexe" />                    
+                    <h:selectOneRadio value="#{adherentData.adherent.gender}" required='true'>
+                         <f:selectItem itemValue = "homme" itemLabel = "Homme" />
+                         <f:selectItem itemValue = "femme" itemLabel = "Femme" />            
+                     </h:selectOneRadio>
+                    
+                    <h:commandButton value="Valider" action="#{adherentData.goToValidate()}" />
+                    <h:commandButton value="Annuler" action="listAdherents" />
+                    
+                    
+                </h:panelGrid>
+                   
+                
+            </fieldset>
+            
+            
+        </h:form>
+    </h:body>
+</html>
